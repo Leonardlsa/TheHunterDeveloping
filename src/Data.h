@@ -3,13 +3,17 @@
 
 #include <stdbool.h>
 
+
+
 //玩家信息
 struct player_info{
     char player_name[30];//玩家名字
     short service_year,service_month;//服役日期
     char submarine_type[7];//潜艇型号
-    int submarine_type_number;
-    int submarine_id;//潜艇ID
+    short submarine_type_number;
+    short submarine_id;//潜艇ID
+    short player_id;//玩家ID号
+    char password[15];//玩家密码
 }player;
 /*submarine_type_number
  *1.VIIA

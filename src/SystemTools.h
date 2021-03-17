@@ -1,6 +1,16 @@
 #ifndef SYSTEMTOOLS_H
 #define SYSTEMTOOLS_H
 #include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <conio.h>
+
+#define LINE 20
+#define COLUMN 150
+
+//缓冲区
+short line;
+char TextBuff[LINE][COLUMN];
 
 //软件层
 int roll(int dies)
@@ -8,6 +18,7 @@ int roll(int dies)
 	int re=0;
 	for(int i=0;i<dies;i++)
 	{
+        
 		re+=(rand()%6+1);
 	}
 	return re;
@@ -51,5 +62,59 @@ char* itoa(int value, char* result, int base) {
 		*ptr1++ = tmp_char;
 	}
 	return result;
+}
+
+
+char* dialoge(char* s)
+{
+	for (int i=0;s[i];i++) 
+	{
+		printf("%c",s[i]);
+        fflush(stdout);
+		usleep(20000);
+	}
+	sleep(1);
+}
+
+int clr()
+{
+    for(int i=0;i<LINE;i++)
+	{
+		for(int j=0;j<COLUMN;j++)
+		{
+			TextBuff[i][j]='\0';
+		}
+	}
+	line=0;
+    fflush(stdin);
+    printf("\n按任意键以继续......\n");
+    getch();
+    clrscr();
+}
+
+
+void dialogeBuff(char* s)
+{
+	for (int i=0;s[i];i++) 
+	{
+		printf("%c",s[i]);
+		TextBuff[line][i]=s[i];
+		fflush(stdout);
+		usleep(20000);
+		if(s[i]=='\n')line++;
+	}
+	sleep(1);
+}
+
+void printBuff()
+{
+    clrscr();
+	for(int i=0;i<line;i++)
+	{
+		for(int j=0;TextBuff[i][j];j++)
+		{
+			printf("%c",TextBuff[i][j]);
+		}
+	}
 }
 #endif

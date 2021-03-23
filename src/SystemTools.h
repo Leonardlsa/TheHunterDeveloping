@@ -76,6 +76,16 @@ char* dialoge(char* s)
 	sleep(1);
 }
 
+char* dialogeIn(char* s)
+{
+	for (int i=0;s[i];i++) 
+	{
+		printf("%c",s[i]);
+        fflush(stdout);
+		usleep(20000);
+	}
+}
+
 int clr()
 {
     for(int i=0;i<LINE;i++)
@@ -117,4 +127,5 @@ void printBuff()
 		}
 	}
 }
+
 #endif

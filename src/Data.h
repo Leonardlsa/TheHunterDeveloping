@@ -14,6 +14,13 @@ struct player_info{
     short submarine_id;//潜艇ID
     short player_id;//玩家ID号
     char password[15];//玩家密码
+    //军衔,从0到4
+    char rank[16];
+    short rank_number;
+    //勋章，从0到4
+    char award[40];
+    short award_number;
+
 }player;
 /*submarine_type_number
  *1.VIIA
@@ -39,13 +46,6 @@ bool sunk_ship_flag[3][100];
 bool NA_sunk_ship_flag[3][20];
 bool C_sunk_ship_flag[10];
 
-
-
-//军衔,从0到4
-short rank=1;
-
-//勋章，从0到4
-short award;
 
 
 //艇员能力(特指水手)

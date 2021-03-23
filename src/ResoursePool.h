@@ -3,7 +3,7 @@
 //资源常量池
 char rank_name[5][16]={
     "Oberleutnant",
-    "Kapitanleutnant",
+    "Käpitanleutnant",
     "Korvettenkapitan",
     "Fregattenkapitan",
     "Kapitan_zur_See"
@@ -36,5 +36,9 @@ char mission_type_name[4][20]=
     "护送特工","水域巡航"
 };
 
-
+char submarine_type_name[8][6]=
+{
+    "VIIA","VIIB","IXA","IXB",
+    "VIIC","IXC","VIID","VIICFk"
+};
 #endif

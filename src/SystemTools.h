@@ -2,7 +2,6 @@
 #define SYSTEMTOOLS_H
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
 #include <conio.h>
 
 #define LINE 20
